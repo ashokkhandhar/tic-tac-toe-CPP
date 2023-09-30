@@ -1,5 +1,4 @@
 #include<iostream>
-#include<climits>
 using namespace std;
 
 #define SIDE 3
@@ -44,7 +43,7 @@ bool gameOver(char board[][SIDE]){
 void showBoard(char board[][SIDE]){
     cout << endl;
     system("cls");
-    cout << "========= TIC TAC TOE =========\n" << endl;
+    cout << "\n======== TIC TAC TOE ========\n" << endl;
     cout << "\t-------------" << endl;
     cout << "\t| " << board[0][0] << " | " << board[0][1] << " | " << board[0][2] << " |" << endl;
     cout << "\t-------------" << endl;
@@ -149,7 +148,7 @@ int minimax(char board[][SIDE], int depth, bool isAI){
 }
 int bestMove(char board[][SIDE], int totalEntries){
     int x = -1, y = -1;
-    int score = 0, bestscore = INT_MIN;
+    int score = 0, bestscore = -999;
     for(int i = 0; i < SIDE; i++){
         for(int j = 0; j < SIDE; j++){
             if(board[i][j] != 'O' and board[i][j] != 'X'){
@@ -214,7 +213,7 @@ int main(){
     char c;
     do{
         system("cls");
-        cout << "\n===== TIC TAC TOE =====" << endl;
+        cout << "\n==== TIC TAC TOE ====" << endl;
         cout << "\n1. Play with Computer" << endl;
         cout << "2. Play with Friend" << endl;
         cout << "\nEnter your choice: ";
